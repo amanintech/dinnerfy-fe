@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  rewrites: async () => {
+  async rewrites() {
     return [
       {
-        source: "/api/:path*",
-        destination:
-          process.env.NODE_ENV === "development"
-            ? "http://127.0.0.1:8000/api/:path*"
-            : "/api/",
+        source: "/recipe",
+        destination: "https://dinnerfy-ds-production.up.railway.app/recipe",
       },
     ];
   },
