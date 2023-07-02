@@ -8,7 +8,7 @@ import { AiOutlineStar } from "react-icons/ai";
 import { BiSolidDish } from "react-icons/bi";
 import { GiWorld } from "react-icons/gi";
 import { IoNutritionOutline } from "react-icons/io5";
-import {TbToolsKitchen2} from "react-icons/tb";
+import { TbToolsKitchen2 } from "react-icons/tb";
 
 import axios from "axios";
 
@@ -74,19 +74,14 @@ const InputSearch = () => {
 
     setIsLoading(true);
 
-    let BASE_URL = "http://localhost:8000";
     axios({
       method: "GET",
       url: "/api/recipe",
       params: { recipe_id: recipeID, servings },
-      proxy: {
-        host: "localhost",
-        port: 8000,
-      },
     })
       .then((response) => {
         setRecipeDetails(response.data);
-        setIsLoading(false); 
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -106,7 +101,9 @@ const InputSearch = () => {
           />
         </div>
         <div className="flex flex-1 items-center text-sm justify-end font-semibold lg:text-md xl:text-lg w-full">
-          <p className="flex mx-0 pr-1 lg:pr-0 lg:mx-5">Enter Number of Servings</p>
+          <p className="flex mx-0 pr-1 lg:pr-0 lg:mx-5">
+            Enter Number of Servings
+          </p>
           <input
             type="number"
             className="flex rounded-md cursor-pointer justify-center items-center p-2 hover:border-2 hover:border-green-500 border-2 w-16 h-12"
@@ -125,7 +122,7 @@ const InputSearch = () => {
 
       {isLoading && (
         <div className="flex justify-center my-4">
-          <div className="loader" /> 
+          <div className="loader" />
           <Loader />
         </div>
       )}
@@ -134,17 +131,11 @@ const InputSearch = () => {
           <div className="flex w-full flex-col">
             <div className="flex text-xl my-14 2xl:h-[8vh] lg:my-12 lg:text-2xl items-center justify-center xl:my-10 font-bold xl:text-3xl 2xl:text-4xl">
               {recipeDetails.Name}
-              <BiSolidDish
-                className="flex drop-shadow-lg text-[50px] lg:text-[60px] text-yellow-500 mx-4"
-               
-              />
+              <BiSolidDish className="flex drop-shadow-lg text-[50px] lg:text-[60px] text-yellow-500 mx-4" />
             </div>
             <div className="flex items-center justify-around">
               <div className="flex font-bold flex-col text-xl flex-1 border-r-2">
-                <AiOutlineStar
-                  className="flex text-[50px] lg:text-[70px] my-3 drop-shadow-lg w-full justify-center text-yellow-500"
-                 
-                />
+                <AiOutlineStar className="flex text-[50px] lg:text-[70px] my-3 drop-shadow-lg w-full justify-center text-yellow-500" />
                 <div className="flex w-full justify-center">
                   {recipeDetails.Recipe_Meta.rating.starRating}
                   <p>
@@ -193,34 +184,50 @@ const InputSearch = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="flex w-full rounded-lg p-4 font-bold justify-start drop-shadow-lg bg-[#f2fdf9] flex-col text-xl my-6">
             <p className="flex w-full text-md lg:text-xl xl:text-2xl items-center h-[5vh]">
-            <IoNutritionOutline className="flex mr-2 items-center text-red-500" size={40} />
+              <IoNutritionOutline
+                className="flex mr-2 items-center text-red-500"
+                size={40}
+              />
               Nutrition Details:
-              
             </p>
             <p className="flex my-6">
               <p className="flex flex-col p-2 text-sm lg:text-md">
                 {recipeDetails.Recipe_Meta.nutritionFact.map((fact, index) => (
-                  <p className="flex my-3 font-semi-bold text-gray-600" key={index}>{fact}</p>
+                  <p
+                    className="flex my-3 font-semi-bold text-gray-600"
+                    key={index}
+                  >
+                    {fact}
+                  </p>
                 ))}
-                <p className="flex my-3 font-semi-bold text-gray-600">Calories: {recipeDetails.Recipe_Meta.calories}</p>
+                <p className="flex my-3 font-semi-bold text-gray-600">
+                  Calories: {recipeDetails.Recipe_Meta.calories}
+                </p>
               </p>
             </p>
           </div>
           <div className="flex w-full rounded-lg p-4 font-bold justify-start drop-shadow-lg bg-[#f2fdf9] flex-col text-xl my-6">
             <p className="flex w-full text-md lg:text-xl xl:text-2xl items-center h-[5vh]">
-            <TbToolsKitchen2 className="flex mr-2 items-center text-gray-500" size={40} />
-            Tools:
-              
+              <TbToolsKitchen2
+                className="flex mr-2 items-center text-gray-500"
+                size={40}
+              />
+              Tools:
             </p>
             <p className="flex my-6">
-            <p className="flex flex-col p-2 text-sm lg:text-md">
-              {recipeDetails.Cooking_Meta.tools.map((tool, index) => (
-                <p className="flex my-3 font-semi-bold text-gray-600" key={index}>{tool}</p>
-              ))}
-            </p>
+              <p className="flex flex-col p-2 text-sm lg:text-md">
+                {recipeDetails.Cooking_Meta.tools.map((tool, index) => (
+                  <p
+                    className="flex my-3 font-semi-bold text-gray-600"
+                    key={index}
+                  >
+                    {tool}
+                  </p>
+                ))}
+              </p>
             </p>
           </div>
 
@@ -236,24 +243,21 @@ const InputSearch = () => {
             </div>
           </div>
 
-          
           {/* <div className="flex flex-1 flex-col"> */}
-            {/* <li>Aliases: {recipeDetails.Recipe_Meta.Aliases.join(", ")}</li> */}
-            {/* <li>Carbon Footprint: {recipeDetails.Recipe_Meta.carbonFootprint}</li> */}
+          {/* <li>Aliases: {recipeDetails.Recipe_Meta.Aliases.join(", ")}</li> */}
+          {/* <li>Carbon Footprint: {recipeDetails.Recipe_Meta.carbonFootprint}</li> */}
 
-            {/* <li>Interest Tags:</li> */}
+          {/* <li>Interest Tags:</li> */}
 
-            {/* <li>Diet Tags:</li>
+          {/* <li>Diet Tags:</li>
             <ul>
               {recipeDetails.Diet_Tags.map((tag, index) => (
                 <li key={index}>{tag}</li>
               ))}
             </ul> */}
-           
-            
 
-            {/* <li>Difficulty: {recipeDetails.Cooking_Meta.difficulty}</li> */}
-            {/* <li>Steps: {recipeDetails.Cooking_Meta.steps}</li> */}
+          {/* <li>Difficulty: {recipeDetails.Cooking_Meta.difficulty}</li> */}
+          {/* <li>Steps: {recipeDetails.Cooking_Meta.steps}</li> */}
           {/* </div> */}
         </div>
       )}
