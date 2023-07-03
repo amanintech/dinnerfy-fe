@@ -129,7 +129,7 @@ const Form = () => {
     setIsLoading(true);
     axios({
       method: "GET",
-      url: "http://localhost:8000/api/python",
+      url: "/api/python",
       params: { recipe_id: recipeID, servings: servings_ },
     })
       .then((response) => {
