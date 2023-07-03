@@ -1,4 +1,4 @@
-import { QuantityType } from "./recipe.type";
+import { QuantityType } from "@/context/context.type";
 
 export function getRandomRecipeID(): number {
   return Math.floor(Math.random() * 67) + 1;
