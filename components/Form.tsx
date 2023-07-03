@@ -129,7 +129,7 @@ const Form = () => {
     setIsLoading(true);
     axios({
       method: "GET",
-      url: "http://localhost:8000/api/python",
+      url: "/api/python",
       params: { recipe_id: recipeID, servings: servings_ },
     })
       .then((response) => {
@@ -148,7 +148,7 @@ const Form = () => {
         <div className="flex flex-col my-3">
           <label>Recipe ID:</label>
           <input
-            className="border-2 border-gray-500 rounded"
+            className="border-2 p-4 border-gray-500 rounded"
             type="text"
             placeholder="Enter Recipe ID"
             value={recipeId}
@@ -158,7 +158,7 @@ const Form = () => {
         <div className="flex flex-col my-3">
           <label>Servings:</label>
           <input
-            className="border-2 border-gray-500 rounded"
+            className="border-2 p-4 border-gray-500 rounded"
             type="number"
             min={1}
             max={6}
@@ -174,7 +174,7 @@ const Form = () => {
           Submit
         </button>
         <button
-          className="bg-yellow-600 rounded hover:bg-yellow-200 p-3 ml-2"
+          className="bg-yellow-600 rounded hover:bg-yellow-200 p-3 ml-2 md:my-3"
           onClick={resetFn}
         >
           Reset
