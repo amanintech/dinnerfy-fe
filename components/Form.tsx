@@ -119,7 +119,6 @@ const Form = () => {
   const resetFn = () => {
     setRecipeId("");
     setServings("");
-    setRecipeDetails(null);
   };
   //
   const onSubmit = (e: React.FormEvent) => {
