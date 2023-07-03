@@ -243,7 +243,10 @@ export default function Page() {
           </svg>
           <p className="text-green-700 font-semibold">Diet Tags:</p>
           {recipe.Diet_Tags.map((tag) => (
-            <div className="bg-green-400 text-black py-1 px-4 rounded-full font-medium w-fit text-xs">
+            <div
+              key={tag}
+              className="bg-green-400 text-black py-1 px-4 rounded-full font-medium w-fit text-xs"
+            >
               <p>{tag}</p>
             </div>
           ))}
@@ -263,7 +266,10 @@ export default function Page() {
           </svg>
           <p className="text-green-700 font-semibold">Nutritions:</p>
           {recipe.Recipe_Meta.nutritionFact.map((tag) => (
-            <div className="bg-green-400 text-black py-1 px-4 rounded-full font-medium w-fit text-xs">
+            <div
+              key={tag}
+              className="bg-green-400 text-black py-1 px-4 rounded-full font-medium w-fit text-xs"
+            >
               <p>{tag}</p>
             </div>
           ))}
@@ -285,7 +291,10 @@ export default function Page() {
           </thead>
           <tbody>
             {recipe.Cooking_Meta.ingredients.map((ingredient) => (
-              <tr className="bg-white border-b hover:bg-gray-50 ">
+              <tr
+                key={ingredient.ingredientName}
+                className="bg-white border-b hover:bg-gray-50 "
+              >
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
@@ -310,7 +319,7 @@ export default function Page() {
           {recipe[
             Object.keys(recipe)[Object.keys(recipe).length - 1]
           ].instructions.map((instruction) => (
-            <li className="mb-10 ml-6">
+            <li key={instruction.stepNumber} className="mb-10 ml-6">
               <span className="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -left-4 ring-4 ring-white">
                 <p>{instruction.stepNumber}</p>
               </span>
