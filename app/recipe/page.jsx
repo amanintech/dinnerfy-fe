@@ -12,19 +12,16 @@ export default function Page() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://dinnerfy-ds-production.up.railway.app/recipe",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              RecipeID: searchParams.get("dish"),
-              Servings: searchParams.get("serving"),
-            }),
-          }
-        );
+        const response = await fetch("/api", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            RecipeID: searchParams.get("dish"),
+            Servings: searchParams.get("serving"),
+          }),
+        });
 
         if (response.ok) {
           const data = await response.json();
