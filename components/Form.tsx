@@ -20,7 +20,6 @@ const Form: FC<Forms> = ({ setLoading, setResponse,setServings }) => {
       data: data,
     };
     const response = await axios.request(reqOptions);
-    console.log(await response.data);
     setResponse(await response.data);
     setLoading(false);
   };
