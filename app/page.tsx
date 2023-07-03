@@ -1,14 +1,11 @@
 "use client";
 
-import { getReciepe } from "@/utils";
+import { useRecipe } from "@/context/RecipeProvider";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    getReciepe();
-  });
+  const { recipeId, servings } = useRecipe();
 
   return (
     <main className="flex justify-center">
@@ -23,11 +20,20 @@ export default function Home() {
           Let us help you.
         </h2>
         <Link
-          href={"/20"}
-          className="text-white bg-green-500 font-bold py-2 px-4 rounded-lg sm:text-lg"
+          href={`/${recipeId}/${servings}`}
+          className="text-white bg-green-500 font-bold py-2 px-4 rounded-lg sm:text-lg mt-2"
         >
           Lets Start
         </Link>
+        <div className="mt-4">
+          <Image
+            src="/assets/images/food.webp"
+            alt="dinner"
+            width={440}
+            height={380}
+            className="rounded-lg"
+          />
+        </div>
       </section>
     </main>
   );
