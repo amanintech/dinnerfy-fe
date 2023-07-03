@@ -123,13 +123,13 @@ const Results: FC<Response> = ({
         <p className="">
           Prepping Time :{" "}
           <span className="font-semibold">
-            {response?.Cooking_Meta.prepTime}
+            {response?.Cooking_Meta.prepTime + " Min."} 
           </span>
         </p>
         <p className="">
           Cooking Time :{" "}
           <span className="font-semibold">
-            {response?.Cooking_Meta.cookTime}
+            {response?.Cooking_Meta.cookTime + " Min."}
           </span>
         </p>
         <p className="">
@@ -197,7 +197,7 @@ const Results: FC<Response> = ({
                     <div className="w-full flex gap-1 sm:gap-4 sm:text-lg text-sm flex-col sm:flex-row items-start text-start">
                       <p className="">
                         Time :{" "}
-                        <span className="font-semibold">{item["time"]}</span>
+                        <span className="font-semibold">{item["time"] + " Min."}</span>
                       </p>
                       <p className="">
                         Tool :{" "}
@@ -210,6 +210,12 @@ const Results: FC<Response> = ({
             }
           )}
         </div>
+      </div>
+
+      <div className="w-full mt-6">
+        <h2 className="font-bold text-center sm:text-4xl text-2xl max-[300px]:text-xl mb-4 ">
+          Bon Apetit &#33;
+        </h2>
       </div>
     </div>
   );
