@@ -1,4 +1,5 @@
 import "./globals.css";
+import { RecipeProvider } from "@/context/RecipeProvider";
 
 export const metadata = {
   title: "Dinnerfy",
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-green-50">{children}</body>
+      <body className="bg-green-50">
+        <RecipeProvider>{children}</RecipeProvider>
+      </body>
     </html>
   );
 }
