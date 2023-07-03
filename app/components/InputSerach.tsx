@@ -178,7 +178,7 @@ const InputSearch = () => {
             </div>
           </div>
           <div className="flex drop-shadow-lg rounded-lg bg-[#f2fdf9]">
-            <div className="flex h-[16vh] text-center items-center w-full">
+            <div className="flex h-[16vh] text-center justify-center items-center w-full">
               <p className="flex w-full py-3 p-5 font-semibold lg:text-md xl:text-lg">
                 {recipeDetails.Recipe_Meta.description}
               </p>
