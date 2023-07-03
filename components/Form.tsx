@@ -38,7 +38,7 @@ const Form: FC<Forms> = ({ setLoading, setResponse,setServings }) => {
   };
 
   return (
-    <div className="flex justify-between flex-wrap-reverse sm:px-10" id="form">
+    <div className="flex justify-between flex-wrap-reverse sm:px-10">
       <div className="w-fit m-auto ">
         <h2 className="text-primary-light font-bold sm:text-3xl max-w-2xl max-[300px]:text-xs text-xl">
           Enter the RecipeID and Servings to get the Recipe

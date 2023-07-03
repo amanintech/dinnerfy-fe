@@ -21,7 +21,7 @@ const Hero = (props: Props) => {
         <h2 className="text-primary-light font-bold sm:text-3xl text-xl max-w-[80%] max-[300px]:text-sm break-words">
           https://dinnerfy-ds-production.up.railway.app/recipe
         </h2>
-        <a href="#form">
+        <a href="#body">
           <button className="mt-4 text-xl bg-primary-light text-white sm:p-10 sm:py-5 px-6 py-3 sm:rounded-2xl rounded-xl hover:scale-105 transition-all ">
             Try Out
           </button>

@@ -13,7 +13,7 @@ const Body: FC<Props> = () => {
   const [response, setResponse] = useState<responseData>(null);
   const [servings, setServings] = useState<number>(1)
   return (
-    <Wrapper styles="text-md pt-20 ">
+    <Wrapper styles="text-md pt-20 " id="body">
       {loading ? (
         <Loading/>
       ) : !!response?.Name ? (

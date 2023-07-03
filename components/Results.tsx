@@ -169,7 +169,7 @@ const Results: FC<Response> = ({
         <div className="grid sm:grid-cols-2 m-auto w-fit sm:w-full sm:m-0">
           {response?.Cooking_Meta.tools.map((item) => (
             <p className=" font-semibold text-xl col-span-1" key={item}>
-              • {item}
+              • {item.replaceAll("_"," ")}
             </p>
           ))}
         </div>
