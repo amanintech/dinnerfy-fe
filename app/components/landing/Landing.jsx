@@ -43,7 +43,7 @@ export default function Landing({ setPage }) {
           />
         </div>
         <p className="text-4xl lg:text-6xl text-green-850 font-bold">
-          What's for dinner ?
+          What&apos;s for dinner?
         </p>
         <p className="text-green-350 text-xl lg:text-3xl font-semibold">
           Know it on Dinnerfy
