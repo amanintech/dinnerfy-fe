@@ -28,9 +28,10 @@ export default function Home() {
               className="w-full relative h-[unset] object-contain"
             />
           </div>
-          <p className="text-4xl lg:text-6xl text-[#175951]  font-bold">
+          <p className="text-4xl lg:text-6xl text-[#175951] font-bold text-center lg:text-left">
             What&apos;s for dinner?
           </p>
+
           <p className="text-[#03C166] text-xl lg:text-3xl font-semibold">
             Know it on Dinnerfy
           </p>
