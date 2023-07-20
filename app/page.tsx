@@ -1,12 +1,24 @@
-// pages/index.js
+// main home page
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="bg-white">
       <div className="min-h-screen bg-[url('/bg.svg')] bg-no-repeat bg-center bg-fixed bg-cover flex items-center justify-center">
-        <div className="bg-green-150 rounded-3xl h-auto w-full max-w-3xl flex flex-col gap-6 p-8 lg:gap-10 items-center">
+        <motion.div
+          className="bg-green-150 rounded-3xl h-auto w-full max-w-3xl flex flex-col gap-6 p-8 lg:gap-10 items-center"
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="h-20 w-72 relative">
             <Image
               src="/logo.png"
@@ -26,7 +38,7 @@ export default function Home() {
               Let's go!
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

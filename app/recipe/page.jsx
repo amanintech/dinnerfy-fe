@@ -1,9 +1,11 @@
 // pages/recipe.js
+//recipe form
 "use client";
 import { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Recipe = () => {
   const [recipeID, setRecipeID] = useState("");
@@ -13,10 +15,20 @@ const Recipe = () => {
   //empty form submission check
   const isFormValid = recipeID.trim() !== "" && servings.trim() !== "";
 
+  const container = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="bg-white">
       <div className="min-h-screen bg-[url('/bg.svg')] bg-no-repeat bg-center bg-fixed bg-cover flex items-center justify-center">
-        <div className="bg-green-150 rounded-3xl h-auto w-full max-w-3xl flex flex-col gap-6 p-8 lg:gap-10 items-center shadow-lg">
+        <motion.div
+          className="bg-green-150 rounded-3xl h-auto w-full max-w-3xl flex flex-col gap-6 p-8 lg:gap-10 items-center shadow-lg"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
           <p className="text-4xl lg:text-6xl text-green-900 font-bold">
             Enter Recipe Details
           </p>
@@ -81,7 +93,7 @@ const Recipe = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
