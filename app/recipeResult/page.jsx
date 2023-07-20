@@ -110,40 +110,50 @@ export default function Page() {
         <div className="bg-green-200 rounded-xl p-5 flex flex-col gap-4 font-semibold">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faStar} className="text-green-700 mr-2" />
-              <p>
+              <FontAwesomeIcon icon={faStar} className="text-green-800 mr-2" />
+              <p className="text-green-700">
                 {recipe.Recipe_Meta.rating.starRating}/5 (
                 {recipe.Recipe_Meta.rating.noOfReviews} reviews)
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faBurn} className="text-green-700 mr-2" />
-              <p>{recipe.Recipe_Meta.calories} Calories</p>
+              <FontAwesomeIcon icon={faBurn} className="text-green-800 mr-2" />
+              <p className="text-green-700">
+                {recipe.Recipe_Meta.calories} Calories
+              </p>
             </div>
           </div>
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faLeaf} className="text-green-700 mr-2" />
-              <p>Carbon Footprint: {recipe.Recipe_Meta.carbonFootprint}</p>
+              <FontAwesomeIcon icon={faLeaf} className="text-green-800 mr-2" />
+              <p className="text-green-700">
+                Carbon Footprint: {recipe.Recipe_Meta.carbonFootprint}
+              </p>
             </div>
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faTasks} className="text-green-700 mr-2" />
-              <p>Difficulty: {recipe.Cooking_Meta.difficulty}</p>
+              <FontAwesomeIcon icon={faTasks} className="text-green-800 mr-2" />
+              <p className="text-green-700">
+                Difficulty: {recipe.Cooking_Meta.difficulty}
+              </p>
             </div>
           </div>
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faClock} className="text-green-700 mr-2" />
-              <p>Preparation Time: {recipe.Cooking_Meta.prepTime} mins</p>
+              <FontAwesomeIcon icon={faClock} className="text-green-800 mr-2" />
+              <p className="text-green-700">
+                Preparation Time: {recipe.Cooking_Meta.prepTime} mins
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <FontAwesomeIcon
                 icon={faStopwatch}
-                className="text-green-700 mr-2"
+                className="text-green-800 mr-2"
               />
-              <p>Cooking Time: {recipe.Cooking_Meta.cookTime} mins</p>
+              <p className="text-green-700">
+                Cooking Time: {recipe.Cooking_Meta.cookTime} mins
+              </p>
             </div>
           </div>
 

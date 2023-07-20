@@ -8,6 +8,10 @@ import { faUtensils, faUsers } from "@fortawesome/free-solid-svg-icons";
 const Recipe = () => {
   const [recipeID, setRecipeID] = useState("");
   const [servings, setServings] = useState("");
+  const [submitAttempted, setSubmitAttempted] = useState(false);
+
+  //empty form submission check
+  const isFormValid = recipeID.trim() !== "" && servings.trim() !== "";
 
   return (
     <div className="bg-white">
@@ -53,6 +57,9 @@ const Recipe = () => {
                 placeholder="Servings"
               />
             </div>
+            {submitAttempted && !isFormValid && (
+              <p>Please fill out all fields.</p>
+            )}
             <div className="flex justify-center">
               <Link
                 href={{
@@ -60,7 +67,15 @@ const Recipe = () => {
                   query: { dish: recipeID, serving: servings },
                 }}
               >
-                <button className="px-8 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transform hover:scale-105 transition-all">
+                <button
+                  className={`px-8 py-2 rounded-lg shadow-md transform transition-all ${
+                    isFormValid
+                      ? "bg-green-500 text-white hover:bg-green-600 hover:scale-105"
+                      : "bg-green-300 text-gray-500 cursor-not-allowed"
+                  }`}
+                  onClick={() => setSubmitAttempted(true)}
+                  disabled={!isFormValid}
+                >
                   Submit
                 </button>
               </Link>
