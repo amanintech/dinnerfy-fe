@@ -94,9 +94,9 @@ export default function Page() {
   //no error, returning the data
   return (
     <div className="flex items-center bg-white justify-center">
-      <div className="bg-green-150 min-h-screen w-7/12 flex flex-col gap-3 p-4 pb-10">
+      <div className="bg-green-150 min-h-screen sm:w-full md:w-7/12 flex flex-col gap-3 p-4 pb-10">
         <div className="flex justify-center">
-          <div className="h-20 w-72 relative">
+          <div className="h-20 w-72 relative md:h-20 md:w-72">
             <Image
               src="/logo.png"
               fill={true}
@@ -105,7 +105,9 @@ export default function Page() {
             />
           </div>
         </div>
-        <p className="text-6xl font-bold text-green-850">{recipe?.Name}</p>
+        <p className="sm:text-2xl md:text-4xl lg:text-6xl font-bold text-green-850 py-2">
+          {recipe?.Name}
+        </p>
         <p className="text-green-450">{recipe.Recipe_Meta.description}</p>
         <div className="bg-green-200 rounded-xl p-5 flex flex-col gap-4 font-semibold">
           <div className="flex items-center gap-6">
@@ -183,7 +185,7 @@ export default function Page() {
         </div>
         <hr></hr>
 
-        <p className="text-3xl font-bold text-green-700 mb-6">Ingredients</p>
+        <p className="text-3xl font-bold text-green-700 mb-4">Ingredients</p>
 
         <div className="bg-green-200 shadow-lg rounded-lg p-5 overflow-auto max-h-96">
           <table className="w-full text-sm bg-white rounded-lg">

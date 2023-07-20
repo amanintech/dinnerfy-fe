@@ -15,6 +15,7 @@ const Recipe = () => {
   //empty form submission check
   const isFormValid = recipeID.trim() !== "" && servings.trim() !== "";
 
+  //framer motion
   const container = {
     hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
