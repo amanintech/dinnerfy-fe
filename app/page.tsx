@@ -36,7 +36,7 @@ export default function Home() {
           </p>
           <Link href="/recipe">
             <button className="px-8 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transform hover:scale-105 transition-all">
-              Let's go!
+              Let&apos;s go!
             </button>
           </Link>
         </motion.div>
